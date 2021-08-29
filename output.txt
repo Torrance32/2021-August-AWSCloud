@@ -1,0 +1,27 @@
+"IPAddress" : {
+      "Type" : "AWS::EC2::EIP"
+    },
+
+    "IPAssoc" : {
+      "Type" : "AWS::EC2::EIPAssociation",
+      "Properties" : {
+        "InstanceId" : { "Ref" : "EC2Instance" },
+        "EIP" : { "Ref" : "IPAddress" }
+      }
+    }
+  },
+  "Outputs" : {
+    "InstanceId" : {
+      "Description" : "InstanceId of the newly created EC2 instance",
+      "Value" : { "Ref" : "EC2Instance" }
+    },
+    "InstanceIPAddress" : {
+      "Description" : "IP address of the newly created EC2 instance",
+      "Value" : { "Ref" : "IPAddress" }
+"IPAssoc" : {
+"Description" : "IP address< XXXXX Test >of the newly created EC2 instance",
+"Value" : { "Ref" : "IPAssoc" }
+
+    }
+  }
+}
